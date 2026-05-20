@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. Bobanschubturnier - Rotary Club Riesa-Elbland</title>
+    <style>
+        :root {
+            --primary-blue: #0b3c72;
+            --secondary-blue: #1d528f;
+            --accent-gold: #f1ab28;
+            --text-dark: #222222;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-bottom: 5px solid var(--accent-gold);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item {
+            padding: 0.5rem;
+        }
+
+        .detail-item .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .detail-item .value {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .qr-section h2 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .qr-section p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-container {
+            background: var(--white);
+            padding: 1rem;
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            border: 2px solid var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            width: 250px;
+        }
+
+        /* Neuer Button für mobile Nutzer */
+        .live-btn {
+            display: block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0 auto 1.5rem auto;
+            max-width: 320px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .live-btn:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        .live-btn:active {
+            transform: scale(0.98);
+        }
+
+        .badge-container {
+            margin-top: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        .info-highlights {
+            text-align: left;
+        }
+
+        .info-highlights h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .info-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer a {
+            color: var(--secondary-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 400px) {
+            .event-details {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .detail-item {
+                border-bottom: 1px solid #eee;
+                padding-bottom: 0.5rem;
+            }
+            .detail-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p>11. Bobanschubturnier</p>
+        <h1>des Rotary Clubs Riesa-Elbland</h1>
+    </header>
+
+    <main>
+
+        <div class="card event-details">
+            <div class="detail-item">
+                <div class="icon">📅</div>
+                <div class="label">Datum</div>
+                <div class="value">06.06.2026</div>
+            </div>
+            <div class="detail-item">
+                <div class="icon">🕒</div>
+                <div class="label">Startzeit</div>
+                <div class="value">08:45 Uhr</div>
+            </div>
+            <div class="detail-item">
+                <div class="icon">📍</div>
+                <div class="label">Ort</div>
+                <div class="value">Bobbahn Riesa</div>
+            </div>
+        </div>
+
+        <div class="card qr-section">
+            <h2>⏱️ LIVETIMING</h2>
+            <p>Scanne den QR-Code mit einem zweiten Gerät oder klicke direkt auf den Button unten, um zu den Live-Ergebnissen zu gelangen.</p>
+            
+            <div class="qr-container">
+                <img src="qr-code-teilnehmende.png" alt="QR-Code für das Livetiming">
+            </div>
+
+            <a href="#" target="_blank" class="live-btn">⏱️ Direkt zum Livetiming</a>
+
+            <div class="badge-container">
+                <span class="badge">Eintritt frei – Spenden willkommen!</span>
+            </div>
+        </div>
+
+        <div class="card info-highlights">
+            <h3>Sei dabei!</h3>
+            <p style="margin-bottom: 1rem; font-style: italic; color: #555;">Anschieben für den guten Zweck – gemeinsam bewegen wir mehr.</p>
+            
+            <ul class="info-list">
+                <li><strong>Action & Teamgeist:</strong> Spannender Wettkampf für Firmen, Vereine & Freunde.</li>
+                <li><strong>Für die ganze Familie:</strong> Spaß, Unterhaltung und ein tolles Rahmenprogramm für Groß und Klein.</li>
+                <li><strong>Gemeinsam Gutes tun:</strong> Der Erlös unterstützt regionale Kinder- und Jugendprojekte.</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Rotary Club Riesa-Elbland</p>
+        <p><a href="https://riesa-elbland.rotary.de" target="_blank">riesa-elbland.rotary.de</a></p>
+    </footer>
+
+</body>
+</html>
