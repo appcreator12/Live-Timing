@@ -18,143 +18,143 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            /* Das Hintergrundbild wird hier eingebunden */
-            background: linear-gradient(rgba(11, 60, 114, 0.85), rgba(11, 60, 114, 0.85)), url('hintergrund.png');
+            background: linear-gradient(rgba(11, 60, 114, 0.88), rgba(11, 60, 114, 0.88)), url('hintergrund.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.5;
             padding: 0;
             min-height: 100vh;
         }
 
         header {
-            background-color: rgba(11, 60, 114, 0.9);
+            background-color: rgba(11, 60, 114, 0.95);
             color: var(--white);
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 2rem 1rem;
             border-bottom: 5px solid var(--accent-gold);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         header p {
-            font-size: 3.2rem;
-            opacity: 0.9;
-            font-weight: 400;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        header h1 {
+            font-size: 1.8rem; /* Perfekte Startgröße für Mobilgeräte */
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.2;
         }
 
         main {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 500px; /* Kompakter für eine tolle Smartphone-Zentrierung */
+            margin: 1rem auto;
+            padding: 0 0.75rem;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
             text-align: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
         }
 
+        /* Responsive Grid für die Eckdaten */
         .event-details {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 0.5rem;
+            gap: 0.5rem;
         }
 
         .detail-item {
-            padding: 0.5rem;
+            padding: 0.25rem;
         }
 
         .detail-item .icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.2rem;
         }
 
         .detail-item .label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            color: #555;
+            color: #666;
             font-weight: bold;
         }
 
         .detail-item .value {
-            font-size: 1rem;
-            font-weight: bold;
+            font-size: 0.95rem;
+            font-weight: 800;
             color: var(--primary-blue);
         }
 
         .qr-section h2 {
             color: var(--primary-blue);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
         }
 
         .qr-section p {
             color: #444;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
         }
 
         .qr-container {
             background: var(--white);
-            padding: 1rem;
+            padding: 0.75rem;
             display: inline-block;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 2px solid var(--primary-blue);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .qr-container img {
             max-width: 100%;
             height: auto;
             display: block;
-            width: 250px;
+            width: 220px; /* Leicht verkleinert für besseren mobilen Viewport */
         }
 
+        /* Großer, daumenfreundlicher Touch-Button */
         .live-btn {
             display: block;
             background-color: var(--primary-blue);
             color: var(--white);
             text-decoration: none;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
+            padding: 1.1rem 1.5rem;
+            border-radius: 12px;
             font-weight: bold;
             font-size: 1.1rem;
-            margin: 0 auto 1.5rem auto;
-            max-width: 320px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            margin: 0 auto 1.25rem auto;
+            box-shadow: 0 6px 15px rgba(11, 60, 114, 0.3);
             transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-
-        .live-btn:hover {
-            background-color: var(--secondary-blue);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .live-btn:active {
+            background-color: var(--secondary-blue);
             transform: scale(0.98);
         }
 
         .badge-container {
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
 
         .badge {
@@ -163,8 +163,8 @@
             color: var(--primary-blue);
             padding: 0.6rem 1.2rem;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1rem;
+            font-weight: 800;
+            font-size: 0.95rem;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
 
@@ -175,7 +175,7 @@
         .info-highlights h3 {
             color: var(--secondary-blue);
             margin-bottom: 0.75rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             border-left: 4px solid var(--accent-gold);
             padding-left: 0.5rem;
         }
@@ -186,9 +186,10 @@
 
         .info-list li {
             position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
+            padding-left: 1.4rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            color: #333;
         }
 
         .info-list li::before {
@@ -201,10 +202,10 @@
 
         footer {
             text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.85rem;
+            padding: 1.5rem 1rem 2rem 1rem;
+            font-size: 0.8rem;
             color: var(--white);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            opacity: 0.9;
         }
 
         footer a {
@@ -213,14 +214,27 @@
             font-weight: bold;
         }
 
-        @media (max-width: 400px) {
+        /* Medien-Queries für größere Bildschirme (Tablets/PCs) */
+        @mixin desktop {
+            @media (min-width: 480px) {
+                header h1 {
+                    font-size: 2.6rem;
+                }
+                header p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        /* Fallback für extrem schmale Bildschirme */
+        @media (max-width: 360px) {
             .event-details {
                 grid-template-columns: 1fr;
-                gap: 0.5rem;
+                gap: 0.25rem;
             }
             .detail-item {
                 border-bottom: 1px solid #eee;
-                padding-bottom: 0.5rem;
+                padding-bottom: 0.25rem;
             }
             .detail-item:last-child {
                 border-bottom: none;
@@ -251,13 +265,13 @@
             <div class="detail-item">
                 <div class="icon">📍</div>
                 <div class="label">Ort</div>
-                <div class="value">Bobbahn Riesa</div>
+                <div class="value">Bobbahn</div>
             </div>
         </div>
 
         <div class="card qr-section">
             <h2>⏱️ LIVETIMING</h2>
-            <p>Scanne den QR-Code mit einem zweiten Gerät oder klicke direkt auf den Button unten, um zu den Live-Ergebnissen zu gelangen.</p>
+            <p>Klicke direkt auf den Button oder scanne den QR-Code, um die Ergebnisse live zu verfolgen.</p>
             
             <div class="qr-container">
                 <img src="qr-code-teilnehmende.png" alt="QR-Code für das Livetiming">
@@ -266,17 +280,15 @@
             <a href="https://bobanschubcup.vercel.app/?view=results" target="_blank" class="live-btn">⏱️ Direkt zum Livetiming</a>
 
             <div class="badge-container">
-                <span class="badge">Eintritt frei – Spenden willkommen!</span>
+                <span class="badge">Vielen Dank für eure Teilnahme!</span>
             </div>
         </div>
 
         <div class="card info-highlights">
-            <h3>Sei dabei!</h3>
-            <p style="margin-bottom: 1rem; font-style: italic; color: #555;">Anschieben für den guten Zweck – gemeinsam bewegen wir mehr.</p>
-            
+            <h3>Anschieben für den guten Zweck</h3>
             <ul class="info-list">
                 <li><strong>Action & Teamgeist:</strong> Spannender Wettkampf für Firmen, Vereine & Freunde.</li>
-                <li><strong>Für die ganze Familie:</strong> Spaß, Unterhaltung und ein tolles Rahmenprogramm für Groß und Klein.</li>
+                <li><strong>Für die ganze Familie:</strong> Spaß, Unterhaltung und ein tolles Rahmenprogramm.</li>
                 <li><strong>Gemeinsam Gutes tun:</strong> Der Erlös unterstützt regionale Kinder- und Jugendprojekte.</li>
             </ul>
         </div>
@@ -285,7 +297,7 @@
 
     <footer>
         <p>© 2026 Rotary Club Riesa-Elbland</p>
-        <p><a href="https://riesa-elbland.rotary.de" target="_blank">riesa-elbland.rotary.de</a></p>
+        <p style="margin-top: 0.25rem;"><a href="https://riesa-elbland.rotary.de" target="_blank">riesa-elbland.rotary.de</a></p>
     </footer>
 
 </body>
